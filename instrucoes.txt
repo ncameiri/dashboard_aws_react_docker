@@ -1,0 +1,10 @@
+https://blog.rocketseat.com.br/dockerfile-principais-comandos-para-criar-a-receita-da-imagem/
+
+Vars {_ACCESS_KEY_ID_}
+{_SECRET_ACCESS_KEY_}
+{_INST_NUM_}
+
+
+docker build -t projeto_dashboard .
+docker run -dit -p 3000:3000 projeto_dashboard 
+docker run -dit -p 3000:3000 --env-file env_var projeto_dashboard
