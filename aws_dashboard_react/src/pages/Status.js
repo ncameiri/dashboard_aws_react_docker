@@ -103,7 +103,13 @@ const Status = () => {
             runCallback(() => {
                 const row = [];
                 for (var j = 0; j < {_INST_NUM_}; j++) {
-                    row.push(<li> {stat_id1.children[1].children[j].children[2].value}  {stat_id1.children[1].children[j].children[0].value} {stat_id1.children[1].children[j].children[2].children[1].value}</li>);
+                    if (stat_id1.children[1].children[j].children[2].children[1].value == 'stopped')
+                        row.push(<li style={{ fontSize: 35 }}> <span style={{ color: "red" }}>{'\u2B24'}</span>{stat_id1.children[1].children[j].children[2].value}  {stat_id1.children[1].children[j].children[0].value} {stat_id1.children[1].children[j].children[2].children[1].value}
+                        </li>);
+                    else {
+                        row.push(<li style={{ fontSize: 35 }}><span style={{ color: "green" }}>{'\u2B24'}</span> {stat_id1.children[1].children[j].children[2].value}  {stat_id1.children[1].children[j].children[0].value} {stat_id1.children[1].children[j].children[2].children[1].value}
+                        </li>);
+                    }
                 }
                 return row;
             })
